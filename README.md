@@ -71,48 +71,6 @@ The previously starred candidates appear near the top, suggesting the model lear
 I chose to star 7 more candidates and retrain the model to see if it ranked better.
 The results now show better results concerning the placement of our starred candidates in the ranking, suggesting good model training.
 
-## Improving the LR model
-### Resampling dataset
-I then used the resampled datasets and compared then using a LR model and accuracy and F1 scores.
-The resampled data with 3x upsampling and downsampling by half worked best for F1 (0.45) and second best accuracy (89.7%).
-
-### Changing probability threshold
-I then used the original dataset and tried to improve the results by changing the threshold in probability score in the LR model.
-Using threshold 0.2 gave best the F1 score (0.45) and second best accuracy results (91.1%).
-
-### Changing class weights
-I also tried to improve the results by using the original dataset and changing the class weights in the LR model.
-Using class weights of 0.2 for Y=0 and 0.8 for Y=1 led to the best F1 score (0.47) and accuracy results (91%)
-
-### Results of LR models
-Using the class weight technique on the data yielded the best F1 score with great accuracy.
-
-## Improving the XGBoost model
-I also tried the above on the XGBoost model
-
-### Resampling dataset
-I  used the resampled datasets and compared then using a XGBoost model and accuracy and F1 scores.
-The resampled data with 3x upsampling and downsampling by half worked best for F1 (0.55) and second best accuracy (91.9%).
-
-### Changing probability threshold
-I then used the original dataset and tried to improve the results by changing the threshold in probability score in the XGBoost model.
-Using threshold 0.3 gave best the F1 score (0.55) and second best accuracy results (92.4%).
-
-### Changing class weights
-I also tried to improve the results by using the original dataset and changing the class weights in the XGBoost model.
-Using class weights of 8 led to the best F1 score (0.56) and accuracy results (91.4%)
-
-### Results of XGBoost models
-Using the class weight technique on the data yielded the best F1 score with great accuracy.
-
-## Testing models with resampled data
-As a second pass I decided to test all the models I ahd built using the resampled data identified above.
-None of the other models performed better than XGBoost with class weights.
-
-## Conclusion
-XGBoost with changed class weights led to best F1 score (0.56) with good accuracy (91.4%).
-5-fold cross validation on the best algorithm from the above (XGBoost with class weight=8) gives an average score of 87.3%
-
 
 ## Bonus questions
 
